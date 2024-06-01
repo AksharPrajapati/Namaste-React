@@ -1,15 +1,5 @@
-{
-  /* <div id="parent">
-        <div id="child">
-            <h1>H1</h1>
-            <h2>H2</h2>
-        </div>
-         <div id="child1">
-            <h1>H1</h1>
-            <h2>H2</h2>
-        </div>
-    </div> */
-}
+import React from "react";
+import ReactDOM from "react-dom/client";
 
 // const heading = React.createElement("h1", {}, "Hello World from React!");
 
