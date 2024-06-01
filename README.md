@@ -1,3 +1,5 @@
+# ---------------- Episode 02 -------------------- #
+
 # NPM
 - It manages packages that we use in our JS applications, but it does not stand for Node Package Manager. We can install any package using npm as it holds a large number of packages.
 
@@ -54,5 +56,27 @@
 - HTTPS
 - Tree Shaking
 - Compression
+
+# ------------------------- Episode 03 ----------------------- #
+
+
+# JSX
+- It's a combination of HTML-like syntax and JavaScript, which allows you to create elements within components with some logic. However, it's not HTML and not part of React.
+
+# React.createElement
+- We can create React elements using this method, and at the end, it gives us a normal JS object. JSX, on the other hand, returns a list of React elements.
+
+# How JSX Works
+- JSX => React Elements => Object Representation => HTML 
+
+# Babel
+- It's a JavaScript compiler that can transpile JSX code into React elements which the JS engine or browser can understand.
+
+# Functional Components
+- It's a normal function that can return JSX elements.
+
+# Composing Components
+- It's the practice of using one component inside another component.
+
 
 
