@@ -1,72 +1,103 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
+import { restaurants } from "./data.js";
 
-const header = React.createElement("div", { className: "title" }, [
-  React.createElement("h1", {}, "H1"),
-  React.createElement("h2", {}, "H2"),
-  React.createElement("h3", {}, "H3"),
-]);
+// Header
+//  - logo / navbar
+// Body
+//  - search bar / search button
+//  - restaurant cards
+//    - name, address, rating, cuosins, image, button, time
+// Footer
+//  - copyright / links / social media / privacy policy
 
-const HeaderJSX = (
-  <div className="title">
-    <h1>H1 JSX</h1>
-    <h2>H2 JSX</h2>
-    <h3>H3 JSX</h3>
-  </div>
-);
-
-const HeaderComponent = () => (
-  <div className="title">
-    {header}
-    {HeaderJSX}
-    <h1>H1 Component</h1>
-    <h2>H2 Component</h2>
-    <h3>H3 Component</h3>
-  </div>
-);
-
-const heading = <h1>Namaste React from JSX!</h1>;
-
-const Title = () => <h1>Functional Title</h1>;
-
-const Title1 = () => <h1>Functional Title1</h1>;
-
-const HeadingComponent = () => {
+const Header = () => {
   return (
-    <div id="container">
-      {heading}
-      {Title1()}
-      <Title />
-      <h1>Namaste from Functional Component </h1>
+    <div className="header-container">
+      <div className="logo-container">
+        <img
+          src="https://img.freepik.com/premium-vector/vector-restaurant-logo-design-template_414584-29.jpg"
+          alt="logo"
+          className="logo"
+        />
+      </div>
+      <div className="navbar-container">
+        <ul className="navbar-items">
+          <li>Home</li>
+          <li>About</li>
+          <li>Contact</li>
+          <li>Cart</li>
+        </ul>
+      </div>
     </div>
   );
 };
 
-const HeaderComponent1 = () => {
+const RestaurantCard = ({ restaurant }) => {
+  const {
+    cloudinaryImageId,
+    name,
+    areaName,
+    avgRatingString,
+    sla,
+    costForTwo,
+    cuisines,
+  } = restaurant?.info;
   return (
-    <div className="container">
+    <div className="restaurant-card">
       <img
-        src="https://img.freepik.com/free-vector/bird-colorful-logo-gradient-vector_343694-1365.jpg?size=338&ext=jpg&ga=GA1.1.2082370165.1717261200&semt=sph"
+        src={
+          "https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/" +
+          cloudinaryImageId
+        }
         alt="logo"
-        height={100}
-        width={100}
+        className="restaurant-logo"
       />
-      <input
-        className="search-bar"
-        width={100}
-        name="searchbar"
-        placeholder="searchbar"
-      />
-      <img
-        src="https://cdn-icons-png.flaticon.com/512/2815/2815428.png"
-        alt="icon"
-        width={100}
-        height={100}
-      />
+      <h3>{name}</h3>
+      <p>
+        {avgRatingString} . {sla.slaString}
+      </p>
+      <p>{costForTwo}</p>
+      <p>{cuisines.join(", ")}</p>
+      <p>{areaName}</p>
+    </div>
+  );
+};
+
+const Body = () => {
+  return (
+    <div className="restaurant-container">
+      <div className="search-container">
+        <h1>Search</h1>
+        <button>Search</button>
+      </div>
+      <div className="restaurant-card-container">
+        {restaurants.map((restaurant) => (
+          <RestaurantCard key={restaurant?.info?.id} restaurant={restaurant} />
+        ))}
+      </div>
+    </div>
+  );
+};
+
+const Footer = () => {
+  return (
+    <div>
+      <h1>Footer</h1>
+    </div>
+  );
+};
+
+const AppLayout = () => {
+  return (
+    <div className="app-container">
+      <Header />
+      <Body />
+      <Footer />
     </div>
   );
 };
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 
-root.render(<HeaderComponent1 />);
+root.render(<AppLayout />);
