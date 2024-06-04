@@ -55,7 +55,14 @@
 .search-container {
   display: flex;
   align-items: center;
-  justify-content: space-around;
+  justify-content: center;
+  height: 5em;
+}
+
+.search-container > input {
+  margin-right: 10px;
+  height: 1.5em;
+  width: 20em;
 }
 
 .restaurant-card-container {

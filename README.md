@@ -114,3 +114,34 @@
 - A config-driven UI is one that renders based on configuration data, typically obtained from an API. It allows the UI to be dynamically built and updated based on the provided data.
 
 
+# --------------- Episode 05 -------------- #
+
+## What is the difference between Named Exports, Default Exports, and * as export?
+
+- **Named Exports:** When you want to export multiple components, use named exports. You import them using curly braces (`{}`).
+
+- **Default Export:** When you want to export a single default component, use the default export syntax. You can only have one default export per module.
+
+- **`* as export`:** This imports everything from a library or package. Use this with caution, as it can lead to naming conflicts and make your code harder to understand.
+
+## What is the importance of the `config.js` file?
+
+- The `config.js` file is used to store static content, such as configuration settings, API keys, or other data that doesn't change frequently. This helps to:
+
+    - Improve code readability by separating data from logic.
+    - Make configuration easier to manage and maintain.
+    - Organize related data for better maintainability.
+
+## What are React Hooks?
+
+React Hooks are functions that let you "hook into" React state and lifecycle features from functional components. Hooks allow you to manage state, perform side effects, and access context without using class components.
+
+Here's a breakdown of some key concepts:
+
+- **State Management:** Hooks are often used for state management in React. When you update state using a hook like `useState`, React compares the previous virtual DOM with the current one and efficiently updates only the necessary parts of the real DOM.
+
+- **Virtual DOM:** The virtual DOM is a lightweight representation of the actual DOM. React uses a diffing algorithm to compare changes between the previous and current virtual DOMs. This allows for efficient updates to the real DOM, improving performance.
+
+## Why do we need the `useState` Hook?
+
+The `useState` hook is a fundamental React Hook that allows you to manage component state in functional components. It returns an array containing the current state value and a function to update it. This is essential for responding to user interactions and dynamically updating the UI based on data changes.
