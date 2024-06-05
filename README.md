@@ -145,3 +145,36 @@ Here's a breakdown of some key concepts:
 ## Why do we need the `useState` Hook?
 
 The `useState` hook is a fundamental React Hook that allows you to manage component state in functional components. It returns an array containing the current state value and a function to update it. This is essential for responding to user interactions and dynamically updating the UI based on data changes.
+
+# -------------- Episode 06 -------------- #
+
+## What is a Microservice Architecture?
+
+Microservices architecture involves dividing a large application into smaller, independent services. These services can focus on specific functionalities, such as frontend, backend, SMS, email, or any other domain-specific task. Here's an analogy: Imagine a restaurant kitchen. The chef (backend) prepares the main course, while other stations handle appetizers (frontend), drinks (SMS service), and desserts (email service). Each station works independently but contributes to the overall dining experience.
+
+## What is Monolithic Architecture?
+
+A monolithic architecture, in contrast, refers to a single, self-contained application. It houses all functionalities within one codebase and deployment unit. This approach can be simpler initially, but as the application grows, it can become difficult to manage, maintain, and scale. Think of a fast-food restaurant where everything is prepared by a single cook—it might be efficient for a small operation, but not so much for a large chain.
+
+## Monolith vs. Microservices: Key Differences
+
+| Feature                    | Monolith                                         | Microservices                                    |
+|----------------------------|----------------------------------------------------|--------------------------------------------------|
+| Codebase                   | Single, centralized codebase                        | Separate codebases for each service               |
+| Deployment                  | Deployed as a whole unit                          | Independently deployable services                 |
+| Scalability                  | Challenging to scale individual functionalities     | Easy to scale individual services                 |
+| Maintainability              | Difficult to manage and maintain a large codebase | Easier to maintain smaller, focused codebases     |
+| Fault Tolerance             | Failure in one part can affect the entire application | Isolated failures have less impact on other services|
+| Development Complexity      | Complex development process due to large codebase | Simpler development due to smaller codebases      |
+
+## Why Use the `useEffect` Hook?
+
+The `useEffect` hook is a React hook that allows you to perform side effects in functional components. This includes fetching data from APIs, subscribing to events, or performing any other actions that require state changes or interactions outside the component itself. Think of it as a way to manage the lifecycle of your components and execute code after rendering or during specific phases like cleanup.
+
+## What is Optional Chaining?
+
+Optional chaining, introduced in ES6 (ECMAScript 2015), provides a safe way to access nested properties or call methods on objects that might be undefined or null. This helps avoid errors when working with potentially missing data. For example:
+
+```javascript
+const user = { profile: { name: "John" } };
+const fullName = user?.profile?.name; // Safe way to access name, avoiding errors if profile or name is undefined
