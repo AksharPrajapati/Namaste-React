@@ -182,3 +182,23 @@ const fullName = user?.profile?.name; // Safely accesses 'name', avoiding errors
 ## What is the difference between Client-Side Routing and Server-Side Routing?
 - **Client-Side Routing**: Routes are handled on the client side, enabling instant updates without reloading the page.
 - **Server-Side Routing**: Routes are fetched from the server, requiring a full page reload for navigation.
+
+
+# -------------- Episode 08 -------------- #
+
+## How do you create Nested Routes react-router-dom cofiguration ?
+- Using child routing
+
+## What is the order of life cycle method calls in Class Based Components ?
+- Constructor -> Rendering -> ComponentDidMount() -> ComponentDidUpdate() -> ComponentWillUnMount()
+- First Render all UI and then only call ComponentDidMount() as it's taking time to load data.
+
+## Why do we use componentDidMount? 
+- Called after Mounting/Rendering. We will use it to handle APIs and it calls once when we insatnce is created.
+
+## Why do we use componentWillUnmount?
+- To cleanup the code or unmount the component.
+
+## Why do we use super(props) in constructor?
+- it allows us to use this keyword from parent class of React.
+
