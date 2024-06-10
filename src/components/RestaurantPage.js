@@ -2,31 +2,15 @@ import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { RESTAURANT_LOGO_URL } from "../utils/constants";
 import Shimmer from "./Shimmer";
+import useResturantPage from "../utils/useResturantPage";
 
 function RestaurantPage() {
   const { id } = useParams();
-  const [foodData, setFoodData] = useState({});
+  const foodData = useResturantPage(id);
 
   if (!id) {
     return <Error />;
   }
-
-  useEffect(() => {
-    getFoodOrderData();
-  }, [id]);
-
-  const getFoodOrderData = async () => {
-    try {
-      const foodData = await fetch(
-        `https://www.swiggy.com/dapi/menu/pl?page-type=REGULAR_MENU&complete-menu=true&lat=21.18880&lng=72.82930&restaurantId=${id}&catalog_qa=undefined&submitAction=ENTER`
-      );
-
-      const json = await foodData.json();
-      setFoodData(json?.data?.cards[2]?.card?.card?.info);
-    } catch (e) {
-      console.error(e);
-    }
-  };
 
   return Object.keys(foodData).length === 0 ? (
     <Shimmer />

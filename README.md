@@ -202,3 +202,32 @@ const fullName = user?.profile?.name; // Safely accesses 'name', avoiding errors
 ## Why do we use super(props) in constructor?
 - it allows us to use this keyword from parent class of React.
 
+# -------------- Episode 09 -------------- #
+
+## When and why do we need lazy()?
+- lazy() is used to load components lazily, which helps reduce the initial bundle size and improve performance, especially in large-scale applications like Make My Trip. It loads components only when needed, enhancing efficiency.
+
+## What is suspense?
+- Suspense is a component that provides a boundary for lazy-loaded components, showing a fallback content (e.g., a loading spinner) while the lazy component is loading.
+
+## Why do we get this error: "A component suspended while responding to synchronous input. This will cause the UI to be replaced with a loading indicator. To fix, updates that suspend should be wrapped with startTransition"? How does suspense fix this error?
+- This error occurs because React tries to load a lazy component that is not rendered during the initial rendering. The component takes time to load, and React shows a loading indicator in the meantime. Using suspense allows React to wait for the component to load without blocking the entire UI, preventing this error and providing a better user experience.
+
+## Advantages and disadvantages of using this code-splitting pattern?
+ - Advantages:
+
+Reduced Initial Load Time: Loads only necessary components initially, speeding up initial rendering.
+Improved Performance: Decreases the amount of code that needs to be downloaded and parsed.
+Better User Experience: Provides faster and more responsive UI interactions.
+
+- Disadvantages:
+
+Initial Setup Complexity: Requires additional setup and configuration.
+Potential Loading Delays: May introduce delays when loading components for the first time.
+Debugging Challenges: Can complicate debugging due to the asynchronous loading of components.
+
+## When and why do we need suspense?
+- Suspense is needed when we are using lazy() to load components. It provides a fallback UI while the component is loading, improving the user experience by preventing a blank or incomplete UI during the load time.
+
+
+
