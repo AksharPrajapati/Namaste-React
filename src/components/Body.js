@@ -15,18 +15,18 @@ const Body = () => {
   const getFoodOrderData = async () => {
     try {
       const data = await fetch(
-        "https://www.swiggy.com/dapi/restaurants/list/v5?lat=21.18880&lng=72.82930&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING"
+        "https://www.swiggy.com/dapi/restaurants/list/v5?lat=21.18880&lng=72.82930&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING",
       );
 
       const jsonData = await data.json();
 
       setRestaurantData(
         jsonData?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle
-          ?.restaurants
+          ?.restaurants,
       );
       setFilteredData(
         jsonData?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle
-          ?.restaurants
+          ?.restaurants,
       );
     } catch (e) {
       console.error(e);
@@ -37,24 +37,26 @@ const Body = () => {
     setInput(e);
     setFilteredData(
       restaurantData.filter((item) =>
-        item?.info?.name.toLowerCase().includes(e.toLowerCase())
-      )
+        item?.info?.name.toLowerCase().includes(e.toLowerCase()),
+      ),
     );
   };
 
   return (
-    <div className="restaurant-container">
-      <div className="search-container">
-        <input
-          type="text"
-          value={input}
-          onChange={(e) => onSearchClicked(e.target.value)}
-        />
-      </div>
+    <div className="mt-10 flex flex-col justify-center px-24" style={{}}>
+      {/* <div className=""> */}
+      <input
+        type="text"
+        value={input}
+        className="mx-auto mb-10 h-8 w-96 rounded-md border-2 border-solid border-orange-400 px-1"
+        onChange={(e) => onSearchClicked(e.target.value)}
+        placeholder="Search"
+      />
+      {/* </div> */}
       {filteredData?.length === 0 ? (
         <Shimmer />
       ) : (
-        <div className="restaurant-card-container">
+        <div className="flex flex-wrap">
           {filteredData?.map((restaurant) => (
             <Link
               key={restaurant?.info?.id}

@@ -15,20 +15,24 @@ function RestaurantPage() {
   return Object.keys(foodData).length === 0 ? (
     <Shimmer />
   ) : (
-    <div>
+    <div className="m-10 flex justify-center gap-5">
       <img
         width={300}
         src={RESTAURANT_LOGO_URL + foodData?.cloudinaryImageId}
         alt="food"
+        className="rounded-lg"
       />
-      <h1>{foodData?.name}</h1>
-      <h1>
-        {foodData?.avgRatingString} ({foodData?.totalRatingsString})
-      </h1>
-      <p>{foodData?.costForTwoMessage}</p>
-      <p>{foodData?.cuisines?.join(", ")}</p>
-      <h1>{foodData?.areaName}</h1>
-      <h1>{foodData?.sla?.slaString}</h1>
+
+      <div>
+        <h1 className="text-3xl font-bold">{foodData?.name}</h1>
+        <h1>
+          ⭐️ {foodData?.avgRatingString} ({foodData?.totalRatingsString})
+        </h1>
+        <p>{foodData?.costForTwoMessage}</p>
+        <p>{foodData?.cuisines?.join(", ")}</p>
+        <h1 className="text font-bold">📍 {foodData?.areaName}</h1>
+        <h1>⏳ {foodData?.sla?.slaString}</h1>
+      </div>
     </div>
   );
 }

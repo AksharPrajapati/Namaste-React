@@ -11,11 +11,11 @@ const RestaurantCard = ({ restaurant }) => {
     cuisines,
   } = restaurant?.info;
   return (
-    <div className="restaurant-card">
+    <div className="m-2 w-56 p-4 hover:w-60">
       <img
         src={RESTAURANT_LOGO_URL + cloudinaryImageId}
         alt="logo"
-        className="restaurant-logo"
+        className="mb-2 w-full rounded-lg"
       />
       <h3>{name}</h3>
       <p>
