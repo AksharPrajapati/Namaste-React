@@ -296,7 +296,7 @@ Debugging Challenges: Can complicate debugging due to the asynchronous loading o
 
 - The .postcssrc file is used to configure PostCSS, which processes your CSS. It specifies plugins and settings for transforming CSS, enabling features like autoprefixing, minification, and Tailwind integration.
 
-# -------------- Episode 10 --------------
+# -------------- Episode 11 --------------
 
 ## What is prop drilling?
 
@@ -313,3 +313,38 @@ Debugging Challenges: Can complicate debugging due to the asynchronous loading o
 ## If you don’t pass a value to the provider does it take the default value?
 
 - Yes, if you don't pass a value to the Context Provider, it will use the default value defined in the createContext function.
+
+# -------------- Episode 12 --------------
+
+## useContext vs Redux
+
+- useContext provides a way to pass data through the component tree without prop drilling, while Redux is a state management library for managing global state in a predictable manner.
+
+## Advantage of using Redux Toolkit over Redux.
+
+- Redux Toolkit simplifies Redux development with pre-configured tools, reducing boilerplate code and improving developer productivity.
+
+## Explain Dispatcher.
+
+- In Redux, the dispatcher is responsible for sending actions to the store, which then updates the state based on the action's type and payload.
+
+## Explain Reducer.
+
+- In Redux, a reducer is a pure function that takes the current state and an action as arguments and returns a new state based on the action type.
+
+## Explain slice.
+
+- In Redux Toolkit, a slice is a collection of Redux reducer logic and actions for a specific feature of your application, defined using the createSlice function.
+
+## Explain selector.
+
+- In Redux, a selector is a function that extracts and returns a specific piece of state from the Redux store.
+
+## Explain createSlice and the configuration it takes.
+
+- In Redux Toolkit, createSlice is a function that generates a slice of the Redux state, along with the actions and reducers. It takes a configuration object with the following properties:
+
+name: A string that names the slice.
+initialState: The initial state for the slice.
+reducers: An object containing reducer functions for handling actions.
+extraReducers (optional): An object or callback function for handling actions defined outside of the slice.
