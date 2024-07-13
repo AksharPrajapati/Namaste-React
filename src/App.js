@@ -1,4 +1,4 @@
-import React, { lazy, Suspense } from "react";
+import React, { createContext, lazy, Suspense } from "react";
 import ReactDOM from "react-dom/client";
 import Header from "./components/Header";
 import Body from "./components/Body";
@@ -11,13 +11,15 @@ import Login from "./components/Login";
 const RestaurantPage = lazy(() => import("./components/RestaurantPage"));
 const About = lazy(() => import("./components/About"));
 
+export const UserContext = createContext("Hey");
+
 const AppLayout = () => {
   return (
-    <div>
+    <UserContext.Provider value={"hello"}>
       <Header />
       <Outlet />
       <Footer />
-    </div>
+    </UserContext.Provider>
   );
 };
 

@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import RestaurantCard from "./RestaurantCard";
+import { RestaurantCard, WithVegRestaurantCard } from "./RestaurantCard";
 import Shimmer from "./Shimmer";
 import { Link } from "react-router-dom";
 
@@ -62,7 +62,7 @@ const Body = () => {
               key={restaurant?.info?.id}
               to={"/restaurant/" + restaurant?.info?.id}
             >
-              <RestaurantCard restaurant={restaurant} />
+              {restaurant?.info?.veg ? <WithVegRestaurantCard restaurant={restaurant} /> : <RestaurantCard restaurant={restaurant} />}
             </Link>
           ))}
         </div>

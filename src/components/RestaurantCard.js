@@ -1,6 +1,6 @@
 import { RESTAURANT_LOGO_URL } from "../utils/constants";
 
-const RestaurantCard = ({ restaurant }) => {
+export const RestaurantCard = ({ restaurant }) => {
   const {
     cloudinaryImageId,
     name,
@@ -28,4 +28,15 @@ const RestaurantCard = ({ restaurant }) => {
   );
 };
 
-export default RestaurantCard;
+const withVegRestaurantCard = (RestaurantCard) => {
+  return (props) => {
+    return (
+      <div>
+        <h1 className="absolute bg-green-500 text-white p-1 rounded-lg ml-2">Veg Available</h1>
+        <RestaurantCard {...props} />
+      </div>
+    );
+  }
+}
+
+export const WithVegRestaurantCard = withVegRestaurantCard(RestaurantCard);

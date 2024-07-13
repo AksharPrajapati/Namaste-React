@@ -295,3 +295,21 @@ Debugging Challenges: Can complicate debugging due to the asynchronous loading o
 ## Why do we have .postcssrc file?
 
 - The .postcssrc file is used to configure PostCSS, which processes your CSS. It specifies plugins and settings for transforming CSS, enabling features like autoprefixing, minification, and Tailwind integration.
+
+# -------------- Episode 10 --------------
+
+## What is prop drilling?
+
+- Prop drilling in React is the process of passing data from a parent component to deeply nested child components through multiple levels of intermediary components.
+
+## What is lifting the state up?
+
+- Lifting state up in React refers to moving the shared state to the closest common ancestor component of the components that need to access the state, allowing them to share and update the state efficiently. (pass setState to child component)
+
+## What is Context Provider and Context Consumer?
+
+- In React, a Context Provider is a component that supplies a context value to its descendants, while a Context Consumer is a component that subscribes to and uses the context value provided.
+
+## If you don’t pass a value to the provider does it take the default value?
+
+- Yes, if you don't pass a value to the Context Provider, it will use the default value defined in the createContext function.
