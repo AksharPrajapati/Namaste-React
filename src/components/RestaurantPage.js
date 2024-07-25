@@ -16,9 +16,9 @@ function RestaurantPage() {
     dispatch(addToCart(foodData))
   }
 
-  if (!id) {
-    return <Error />;
-  }
+  // if (!id) {
+  //   return <Error />;
+  // }
 
   return Object.keys(foodData).length === 0 ? (
     <Shimmer />

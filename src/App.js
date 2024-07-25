@@ -10,11 +10,10 @@ import Login from "./components/Login";
 import { Provider } from "react-redux";
 import AppStore from "./utils/appStore";
 import Cart from "./components/Cart";
+import { UserContext } from "./utils/userContext";
 
 const RestaurantPage = lazy(() => import("./components/RestaurantPage"));
 const About = lazy(() => import("./components/About"));
-
-export const UserContext = createContext("Hey");
 
 const AppLayout = () => {
   return (

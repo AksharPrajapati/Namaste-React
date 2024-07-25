@@ -16,9 +16,9 @@ const Cart = () => {
             <h1 className="text-3xl text-center">Cart</h1>
             <button className="bg-orange-500 p-1 text-white rounded-lg w-32 m-auto" onClick={handleClearCart}>Clear Cart</button>
             {cartItems.length === 0 ? "Cart is Empty" :
-                cartItems.map((item) => {
+                cartItems.map((item, key) => {
                     return (
-                        <div className="m-10 flex justify-center gap-5">
+                        <div key={key} data-testid="cartItem" className="m-10 flex justify-center gap-5">
                             <img
                                 width={300}
                                 src={RESTAURANT_LOGO_URL + item?.cloudinaryImageId}

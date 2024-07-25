@@ -11,7 +11,7 @@ export const RestaurantCard = ({ restaurant }) => {
     cuisines,
   } = restaurant?.info;
   return (
-    <div className="m-2 w-56 p-4 hover:w-60">
+    <div data-testid="resCard" className="m-2 w-56 p-4 hover:w-60">
       <img
         src={RESTAURANT_LOGO_URL + cloudinaryImageId}
         alt="logo"

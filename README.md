@@ -348,3 +348,36 @@ name: A string that names the slice.
 initialState: The initial state for the slice.
 reducers: An object containing reducer functions for handling actions.
 extraReducers (optional): An object or callback function for handling actions defined outside of the slice.
+
+# -------------- Episode 13 --------------
+
+## What are different types for testing?
+
+- The different types of testing include unit testing, integration testing, system testing, acceptance testing, performance testing, and security testing.
+
+## What is Enzyme?
+
+- Enzyme is a JavaScript testing utility for React that makes it easier to test the output of React components by providing a consistent API for traversing and manipulating the rendered component trees.
+
+## Enzyme vs React Testing Library
+
+- Enzyme and React Testing Library are both tools for testing React components, but they have different philosophies and approaches:
+
+- Enzyme:
+
+- Created by Airbnb.
+- Allows for shallow, mount, and render methods to test React components.
+- Provides extensive APIs to manipulate and assert the rendered component tree.
+- Focuses on testing component internals and implementation details.
+
+- React Testing Library:
+
+- Created by Kent C. Dodds.
+- Emphasizes testing the component's behavior from the user's perspective.
+- Encourages writing tests that focus on how users interact with the application.
+- Provides simple and lightweight utilities for querying the DOM in a way similar to how a user would.
+- Discourages testing implementation details, promoting maintainable tests that are less brittle.
+
+## What is Jest and why do we use it?
+
+- Jest is a JavaScript testing framework developed by Facebook. It is commonly used for testing JavaScript applications, especially those built with React.
